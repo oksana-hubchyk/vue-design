@@ -8,7 +8,7 @@ import UserCard from '@/components/UserCard.vue';
     <p>Це наша нова сторінка контактів!</p>
 
     <UserCard username="Student_1" :isActive="true" />
-    <UserCard username="Student_2" :isActive="1" /> <!--Додана помилка - число "1" замість значення "false"-->
+    <UserCard username="Student_2" :isActive="false" /> <!--Додана помилка - число "1" замість значення "false"-->
 
   </div>
 </template>
