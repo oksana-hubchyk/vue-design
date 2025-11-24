@@ -1,0 +1,8 @@
+[33mb78895e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33mf473ee0[m HEAD@{1}: reset: moving to HEAD~1
+[33m2fc4d89[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: pull --rebase (finish): returning to refs/heads/main
+[33m2fc4d89[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: pull --rebase (pick): иправлено спеціально додану помилку після абораторної 4
+[33mf473ee0[m HEAD@{4}: pull --rebase (start): checkout f473ee013d4ed06ff5fcc9e602a89526769b7a44
+[33mcbbf131[m HEAD@{5}: commit: иправлено спеціально додану помилку після абораторної 4
+[33mb78895e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{6}: Branch: renamed refs/heads/master to refs/heads/main
+[33mb78895e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{8}: commit (initial): Initial commit
