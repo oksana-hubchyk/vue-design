@@ -1,0 +1,214 @@
+<template>
+  <div class="meet-view">
+    <header>
+      <img
+        src="https://uploads.onecompiler.io/442yvb7h8/442yu7s7s/1000000995.png"
+        alt="Meet New People Illustration"
+        class="illustration"
+      />
+    </header>
+
+    <main>
+      <div class="title">MEET NEW PEOPLE</div>
+      <p class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacinia
+        tellus quis est pharetra fermentum. Curabitur dapibus neque id lacus
+        hendrerit rhoncus. Vivamus quis pretium metus. Praesent varius tortor sit
+        amet quam eleifend hendrerit. Vivamus pharetra ultrices diam vel volutpat.
+        Praesent molestie lobortis sodales. Sed volutpat tempus orci.
+      </p>
+    </main>
+
+    <footer>
+      <button class="btn-skip">SKIP</button>
+
+      <div class="dots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <button class="btn-next" :disabled="isLastStep" @click="$emit('next')">
+        NEXT
+      </button>
+    </footer>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "MeetView",
+  props: {
+    isLastStep: Boolean,
+  },
+};
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.meet-view {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f6f7fb;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 80px;
+}
+
+.illustration {
+  width: 70%;
+  max-width: 240px;
+  height: auto;
+  transition: all 0.25s ease;
+}
+
+/* main */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 25px;
+  margin-top: -10px;
+}
+
+.title {
+  background-color: #ff5a5f;
+  color: white;
+  padding: 10px 5px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+  width: 70%;
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
+}
+
+.text {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  background-color: #f6f7fb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px 25px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.btn-skip,
+.btn-next {
+  flex: 0 0 auto;
+  width: 65px;
+  padding: 7px 0;
+  font-weight: 600;
+  font-size: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-skip {
+  background-color: #f0f0f0;
+  color: #555;
+}
+
+.btn-skip:hover {
+  background-color: #d6d6d6;
+}
+
+.btn-next {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.btn-next:hover {
+  background-color: #e14c50;
+}
+
+.dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 33px;
+  transition: all 0.25s ease;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background-color: #ddd;
+  transition: all 0.25s ease;
+}
+
+.dot.active {
+  background-color: #ff5a5f;
+}
+
+/* media */
+@media (max-width: 480px) {
+  .illustration {
+    width: 80%;
+  }
+
+  .title {
+    font-size: 12px;
+    width: 80%;
+  }
+
+  .text {
+    font-size: 7px;
+    width: 95%;
+  }
+}
+
+@media (max-width: 267px) {
+  .btn-skip,
+  .btn-next {
+    width: calc(50px + (65 - 50) * ((100vw - 200px) / (267 - 200)));
+    font-size: calc(8px + (10 - 8) * ((100vw - 200px) / (267 - 200)));
+    padding: calc(5px + (7 - 5) * ((100vw - 200px) / (267 - 200))) 0;
+  }
+
+  .dot {
+    width: calc(4px + (7 - 4) * ((100vw - 200px) / (267 - 200)));
+    height: calc(4px + (7 - 4) * ((100vw - 200px) / (267 - 200)));
+  }
+
+  .dots {
+    gap: calc(5px + (8 - 5) * ((100vw - 200px) / (267 - 200)));
+  }
+}
+</style>
