@@ -20,7 +20,8 @@
     </main>
 
     <footer>
-      <button class="btn-skip">SKIP</button>
+      <button class="btn-skip" @click="$emit('skip')">SKIP</button>
+
 
       <div class="dots">
         <div class="dot"></div>
@@ -174,7 +175,6 @@ footer {
   background-color: #ff5a5f;
 }
 
-/* ---- MEDIA ---- */
 @media (max-width: 480px) {
   .illustration {
     width: 60%;

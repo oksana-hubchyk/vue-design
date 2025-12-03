@@ -20,7 +20,7 @@
     </main>
 
     <footer>
-      <button class="btn-skip">SKIP</button>
+      <button class="btn-skip" @click="$emit('skip')">SKIP</button>
 
       <div class="dots">
         <div class="dot active"></div>
@@ -62,7 +62,6 @@ export default {
   overflow: hidden;
 }
 
-/* header */
 header {
   display: flex;
   justify-content: center;
@@ -78,7 +77,7 @@ header {
   transition: all 0.25s ease;
 }
 
-/* main */
+
 main {
   flex: 1;
   display: flex;
@@ -110,7 +109,6 @@ main {
   margin: 0 auto;
 }
 
-/* footer */
 footer {
   width: 100%;
   background-color: #f6f7fb;
@@ -177,7 +175,6 @@ footer {
   background-color: #ff5a5f;
 }
 
-/* media */
 @media (max-width: 480px) {
   .illustration {
     width: 80%;
