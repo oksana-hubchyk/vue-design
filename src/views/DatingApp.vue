@@ -33,11 +33,11 @@
 <script setup>
 import { ref } from 'vue'
 
-import MeetView from './components/MeetView.vue'
-import ChatView from './components/ChatView.vue'
-import FindView from './components/FindView.vue'
-import LoginView from './components/LoginView.vue'
-import RegisterView from './components/RegisterView.vue'
+import MeetView from '../components/MeetView.vue'
+import ChatView from '../components/ChatView.vue'
+import FindView from '../components/FindView.vue'
+import LoginView from '../components/LoginView.vue'
+import RegisterView from '../components/RegisterView.vue'
 
 const step = ref(1)   // 1=Meet, 2=Chat, 3=Find, 4=Login, 5=Register
 
@@ -53,3 +53,9 @@ function toggleAuth() {
   step.value = step.value === 4 ? 5 : 4
 }
 </script>
+
+<style>
+.funText {
+  font-family: 'Chewy', cursive;
+}
+</style>

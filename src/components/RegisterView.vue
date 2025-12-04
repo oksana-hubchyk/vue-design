@@ -1,4 +1,3 @@
-<!-- src/components/RegisterView.vue -->
 <template>
   <div class="register-screen">
     <div class="container">
@@ -20,7 +19,6 @@
         <button class="tab active">REGISTER</button>
       </div>
 
-      <!-- FORM -->
       <form class="form" @submit.prevent="submitForm">
         <input
           v-model="form.username"
@@ -60,7 +58,6 @@ function emitSwitch() {
   emit("switchAuth");
 }
 
-// state
 const form = reactive({
   username: "",
   password: "",
@@ -70,9 +67,8 @@ const form = reactive({
 const isSubmitted = ref(false);
 
 function submitForm() {
-  if (isSubmitted.value) return; // блокує повторні
+  if (isSubmitted.value) return;
 
-  // проста валідація
   if (!form.username || !form.password || !form.email) {
     alert("Please fill all fields");
     return;
@@ -216,5 +212,11 @@ input {
   font-weight: bold;
   text-decoration: none;
   margin-left: 4px;
+}
+
+.register-screen input {
+  background: white !important;
+  border: none !important;
+  color: black !important;
 }
 </style>

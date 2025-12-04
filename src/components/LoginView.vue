@@ -1,4 +1,3 @@
-<!-- src/components/LoginView.vue -->
 <template>
   <div class="login-screen">
     <div class="container">
@@ -20,7 +19,6 @@
         <button class="tab" @click="emitSwitch">REGISTER</button>
       </div>
 
-      <!-- FORM -->
       <form class="form" @submit.prevent="submitForm">
         <input
           v-model="form.username"
@@ -55,7 +53,6 @@ function emitSwitch() {
   emit("switchAuth");
 }
 
-// state for form
 const form = reactive({
   username: "",
   password: "",
@@ -209,5 +206,11 @@ input {
   font-weight: bold;
   text-decoration: none;
   margin-left: 4px;
+}
+
+.login-screen input {
+  background: white !important;
+  border: none !important;
+  color: black !important;
 }
 </style>
