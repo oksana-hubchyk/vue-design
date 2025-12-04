@@ -20,12 +20,23 @@
         <button class="tab" @click="emitSwitch">REGISTER</button>
       </div>
 
-      <input type="text" placeholder="user name">
-      <input type="password" placeholder="password">
+      <!-- FORM -->
+      <form class="form" @submit.prevent="submitForm">
+        <input
+          v-model="form.username"
+          type="text"
+          placeholder="user name"
+        />
+        <input
+          v-model="form.password"
+          type="password"
+          placeholder="password"
+        />
 
-      <a href="#" class="forgot">FORGOT PASSWORD?</a>
+        <a href="#" class="forgot">FORGOT PASSWORD?</a>
 
-      <button class="login-btn">LOGIN</button>
+        <button class="login-btn" type="submit">LOGIN</button>
+      </form>
 
       <div class="bottom-text">
         DON'T HAVE AN ACCOUNT?
@@ -36,10 +47,33 @@
 </template>
 
 <script setup>
-const emit = defineEmits(["switchAuth"])
+import { reactive, ref } from "vue";
+
+const emit = defineEmits(["switchAuth"]);
 
 function emitSwitch() {
-  emit("switchAuth")
+  emit("switchAuth");
+}
+
+// state for form
+const form = reactive({
+  username: "",
+  password: "",
+});
+
+const isSubmitted = ref(false);
+
+function submitForm() {
+  if (isSubmitted.value) return;
+
+  if (!form.username || !form.password) {
+    alert("Please enter login and password");
+    return;
+  }
+
+  console.log("LOGIN SUBMIT:", { ...form });
+
+  isSubmitted.value = true;
 }
 </script>
 

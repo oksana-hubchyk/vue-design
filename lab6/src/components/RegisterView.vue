@@ -20,13 +20,28 @@
         <button class="tab active">REGISTER</button>
       </div>
 
-      <input type="text" placeholder="user name">
-      <input type="password" placeholder="password">
-      <input type="email" placeholder="email">
+      <!-- FORM -->
+      <form class="form" @submit.prevent="submitForm">
+        <input
+          v-model="form.username"
+          type="text"
+          placeholder="user name"
+        />
+        <input
+          v-model="form.password"
+          type="password"
+          placeholder="password"
+        />
+        <input
+          v-model="form.email"
+          type="email"
+          placeholder="email"
+        />
 
-      <a href="#" class="forgot">FORGOT PASSWORD?</a>
+        <a href="#" class="forgot">FORGOT PASSWORD?</a>
 
-      <button class="register-btn">REGISTER</button>
+        <button class="register-btn" type="submit">REGISTER</button>
+      </form>
 
       <div class="bottom-text">
         ALREADY HAVE AN ACCOUNT?
@@ -37,10 +52,35 @@
 </template>
 
 <script setup>
-const emit = defineEmits(["switchAuth"])
+import { reactive, ref } from "vue";
+
+const emit = defineEmits(["switchAuth"]);
 
 function emitSwitch() {
-  emit("switchAuth")
+  emit("switchAuth");
+}
+
+// state
+const form = reactive({
+  username: "",
+  password: "",
+  email: "",
+});
+
+const isSubmitted = ref(false);
+
+function submitForm() {
+  if (isSubmitted.value) return; // блокує повторні
+
+  // проста валідація
+  if (!form.username || !form.password || !form.email) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  console.log("REGISTER SUBMIT:", { ...form });
+
+  isSubmitted.value = true;
 }
 </script>
 
